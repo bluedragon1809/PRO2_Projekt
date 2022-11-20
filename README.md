@@ -4,7 +4,7 @@ Aktuell erfasse ich meine gelesenen Bücher handschriftlich.
 ## 2. Projektidee
 Mithilfe der Webapplikation, möchte ich eine gute Übersicht von meinen Büchern erschaffen. Ich möchte bereits gelesene Bücher erfassen und Vorschläge für neue Bücher erhalten.
 ## 3. Workflow
-![](../Workflow.jpg)
+![Workflow](https://user-images.githubusercontent.com/113971574/202894817-173e4bf0-c66c-4946-a20e-0c016df6896b.jpg)
 ## 4. Programmübersicht
 ### Erfassen
 Hier kann der User ein neues Buch erfassen.
