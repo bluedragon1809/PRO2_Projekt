@@ -1,10 +1,23 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
 <h1>Willkommen zur Bücherverwaltung!<h1/>
-    <h2>Was möchten Sie tun?</h2>
-    <form method="post" action="/">
-        <input type="submit" value="Erfassen" name="action1"/>
-        <input type="submit" value="Vorschläge anzeigen" name="action2"/>
-    </form>
+    <br/>
+<p> Mithilfe dieser Webapplikation, kann man eine gute Übersicht über gelesene Büchern erschaffen. Man kann bereits gelesene Bücher erfassen und Vorschläge für neue Bücher erhalten.</p>
+    <br/>
+<h2>Was möchten Sie tun?</h2>
+<br/>
+    <a href="/erfassen" type="button" class="btn btn-primary">Erfassen</a>
+    <a href="/vorschlaege" type="button" class="btn btn-primary">Vorschläge anzeigen</a>
+    <a href="/uebersicht" type="button" class="btn btn-primary">Übersicht anschauen</a>
 {% endblock %}
+
+</body>
+</html>
