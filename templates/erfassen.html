@@ -8,80 +8,40 @@
 {% extends "base.html" %} <!-- uses same template as homepage -->
 {% block title %}Home Page{% endblock %}
 {% block content %}
-
-<h1>Buch Erfassen</h1>
+<br/><br/>
+<h1 class="font-weight-bold text-center">Buch Erfassen</h1>
 <br/><br/>
 
 <!-- form code copied from bootstrap -->
-  <form action="/danke" method="POST">
+    <form action="/danke" method="POST">
 
-  <div class="form-group">  <!-- first row -->
-    <label for="exampleInputPassword1">Titel</label>
-    <input type="text" class="form-control is-invalid" placeholder="Titel" required> <!-- is-invalid, required and invalid-feedback for error message -->
-    <div class="invalid-feedback">
-        Bitte dieses Feld ausfüllen.
-    </div>
-  </div>
+      <div class="form-group">  <!-- first row -->
+        <label for="title">Titel</label>
+        <input type="text" class="form-control" placeholder="Titel" id="title" name="title" required > <!-- required sends error message after submitting -->
+      </div>
 
-  <div class="form-group"> <!-- second row -->
-    <label for="exampleInputPassword1">Author</label>
-    <input type="text" class="form-control is-invalid" id="exampleInputPassword1" placeholder="Author" required>
-    <div class="invalid-feedback">
-        Bitte dieses Feld ausfüllen.
-    </div>
-  </div>
+      <div class="form-group"> <!-- second row -->
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" placeholder="Author" name="author" required>
+      </div>
 
-  <div class="form-group"> <!-- third row with multiple selection -->
-    <label for="exampleFormControlSelect2">Genre</label>
-    <select multiple class="form-control is-invalid" id="exampleFormControlSelect2" required>
-      <option>Fantasy</option>
-      <option>Thriller</option>
-      <option>Sci-Fi</option>
-      <option>Dystopian</option>
-      <option>Non-Fiction</option>
-    </select>
-    <div class="invalid-feedback">
-        Bitte mindestens eine Option auswählen.
-    </div>
-  </div>
-
-  <div class="form-group"> <!-- fourth row with input text area-->
-    <label for="exampleFormControlTextarea1">Bewertung</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea >
-
-  </div>
-
-  <div class="form-check form-check-inline"> <!-- fifth row numbers 1 to 5 -->
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required>
-  <label class="form-check-label" for="inlineRadio1">1</label>
-  <div class="invalid-feedback">Bitte eine Option auswählen.</div>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" required>
-    <label class="form-check-label" for="inlineRadio2">2</label>
-    <div class="invalid-feedback">Bitte eine Option auswählen.</div>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" required>
-    <label class="form-check-label" for="inlineRadio2">3</label>
-    <div class="invalid-feedback">Bitte eine Option auswählen.</div>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" required>
-    <label class="form-check-label" for="inlineRadio2">4</label>
-    <div class="invalid-feedback">Bitte eine Option auswählen.</div>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" required>
-    <label class="form-check-label" for="inlineRadio2">5</label>
-    <div class="invalid-feedback">Bitte eine Option auswählen.</div>
-  </div>
-
-  <br/><br/>
-  <button type="submit" class="btn btn-primary">Buch Erfassen</button> <!-- submit button -->
-  <br/><br/>
-</form>
-
+      <div class="form-group"> <!-- third row with multiple selection -->
+        <label for="genre">Genre</label>
+        <select multiple class="form-control" id="genre" name="genre" required>
+          <option>Fantasy</option>
+          <option>Thriller</option>
+          <option>Sci-Fi</option>
+          <option>Dystopian</option>
+          <option>Non-Fiction</option>
+        </select>
+      </div>
+        <div class="form-group"> <!-- fourth row numbers 1 to 5 -->
+          <label for="bewertung">Bewertung</label>
+          <input type="number" min="1" max="5" class="form-control" id="bewertung" name="bewertung" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Buch Erfassen</button> <!-- submit button -->
+      <br/><br/>
+    </form>
 
 </body>
 </html>
