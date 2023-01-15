@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bearbeiten</title>
+</head>
+<body>
+{% extends "base.html" %} <!-- uses same template as homepage -->
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<div class="content-main">
+    <h2>Bearbeiten</h2>
+
+    <div class="container-fluid">
+
+        <form method="POST">
+            <div class="form-group w-50">
+                <label for="title">Titel</label>
+                <input type="text" class="form-control" value="{{entry.title}}" id="title"
+                       name="title" required>
+            </div>
+            <div class="form-group w-50">
+                <label for="author">author</label>
+                <input type="text" class="form-control" value="{{entry.author}}" id="author"
+                       name="author" required>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" class="form-control" value="{{entry.genre}}" id="genre"
+                               name="genre" required>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="bewertung">Bewertung</label>
+                        <input type="number" min="1" max="5" class="form-control"
+                               value="{{entry.bewertung}}" id="bewertung" name="bewertung" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" class="btn-form btn btn-lg btn-primary">Speichern</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
