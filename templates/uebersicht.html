@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übersicht</title>
+</head>
+<body>
+{% extends "base.html" %} <!-- uses same template as homepage -->
+{% block title %}Home Page{% endblock %}
+{% block content %}
+</br></br>
+        <h1 class="font-weight-bold text-center">Bücher Übersicht</h1>
+</br></br>
+<div class="col">
+        <h4>Vorschläge anzeigen lassen:</h4>
+</div>
+<br/>
+
+        <!-- filters all the existing books from database with form -->
+<div class="container">
+        <form method="POST">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control form-select filter-select" aria-label="Default select example" name="title">
+                        <option value="" selected>Titel</option>
+                        {%for title in titles%}
+                        <option value="{{ title }}">{{ title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br/><br/>
+                <div class="w-100"></div>
+                <div class="col">
+                    <select class="form-control form-select filter-select" aria-label="Default select example" name="author">
+                        <option value="" selected>Author</option>
+                        {%for author in authors%}
+                        <option value="{{ author }}">{{ author }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br/><br/>
+                <div class="w-100"></div>
+                    <div class="col">
+                        <select class="form-control form-select filter-select" aria-label="Default select example" name="genre">
+                            <option value="" selected>Genre</option>
+                            {%for genre in genres %}
+                            <option value="{{ genre }}">{{ genre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                <br/><br/>
+                <div class="w-100"></div>
+                        <div class="col">
+                            <select class="form-control form-select filter-select" aria-label="Default select example" name="bewertung">
+                                <option value="" selected>Bewertung</option>
+                                {%for bewertung in bewertungen %}
+                                <option value="{{ bewertung }}">{{ bewertung }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                <br/><br/>
+                <div class="w-100"></div>
+                <div class="col">
+                <button type="submit" class="btn btn-primary ">Vorschläge anzeigen</button>
+            </div>
+        </form>
+</div>
+
+<br/><br/>
+<!-- list of all the books -->
+<div class="col">
+        <h4>Meine Bücherliste:</h4>
+</div>
+<div class="col">
+        </br>
+        <div class="row">
+            {% for entry in entries %}
+            <div class="card card-archiv bg-light border-dark" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ entry.title }}</h5>
+                    <p class="card-text">Titel: {{ entry.title }}</p>
+                    <p class="card-text">Author: {{ entry.author }}</p>
+                    <p class="card-text">Genre: {{ entry.genre }}</p>
+                    <p class="card-text">Bewertung: {{ entry.bewertung }} von 5</p>
+                    <a class="btn btn-secondary" href="/edit/{{entry.id}}" role="Button">Edit</a>
+                    <a class="btn btn-danger" href="/delete/{{entry.id}}" role="Button">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+</body>
+</html>
+{% endblock %}
