@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyse</title>
+</head>
+<body>
+{% extends "base.html" %} <!-- uses same template as homepage -->
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+<br/><br/>
+<h1 class="font-weight-bold text-center">Analyse</h1>
+<br/><br/>
+<div class="col">
+        <h4>Was möchten Sie analysieren?</h4>
+        </br>
+        <form method="POST">
+        <div class="row">
+            <div class="col">
+                <select class="form-control form-select filter-select" placeholder="Daten X-Achse" aria-label="Default select example" name="x-achse">
+                    <option value="" selected>Daten X-Achse</option>
+                    <option value="bewertung">Bewertung</option>
+                    <option value="author">Author</option>
+                    <option value="genre">Genre</option>
+                </select>
+            </div>
+            </br></br>
+            <div class="w-100"></div>
+            <div class="col">
+                <select class="form-control form-select filter-select" aria-label="Default select example" name="y-achse">
+                    <option value="" selected>Daten Y-Achse</option>
+                    <option value="count">Anzahl Bücher</option>
+                </select>
+            </div>
+        </div>
+            </br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Analysieren</button>
+            </div>
+
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}
