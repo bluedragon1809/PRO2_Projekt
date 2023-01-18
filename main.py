@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 # import from datenbank.py
 from datenbank import read, save, entries_sorted, read_selected, entry_corrected, \
-    delete_entry
+    delete_entry, draw_graph
 
 app = Flask("Bücherverwaltung")
 
@@ -15,19 +15,14 @@ def home():
 @app.route('/erfassen', methods=["GET", "POST"])
 def create():
     if request.method == "GET":
-        return render_template('erfassen.html')
+        return render_template("erfassen.html")
     if request.method == "POST":
         data_entries = request.form.to_dict()
         save(data_entries)
         return redirect("/uebersicht")  # saves data to uebersicht
 
 
-@app.route('/analyse', methods=["GET", "POST"])
-def stats():
-    return render_template('analyse.html')
-
-
-@app.route('/uebersicht', methods=["GET", "POST"])
+@app.route("/uebersicht", methods=["GET", "POST"])
 def summary():
     # creating filter option
     entries = read()
@@ -56,11 +51,6 @@ def summary():
                            entries=entries)
 
 
-@app.route('/danke', methods=["POST"])  # sends filled out information from form to 'danke' page
-def thanks():
-    return render_template('danke.html')
-
-
 @app.route("/edit/<entry_id>", methods=["GET", "POST"])
 def modify(entry_id):
     if request.method == "GET":  # selected entry can be edited
@@ -76,24 +66,26 @@ def remove(entry_id):  # entry will be deleted with the help of id
     delete_entry(int(entry_id))
     return redirect("/uebersicht")
 
+
 # Route Statistiken
 @app.route("/analyse", methods=["GET", "POST"])
 def graph():
     if request.method == "GET":
-        return render_template("analyse.html", diagram_title="false")
+        return render_template("analyse.html")
     if request.method == "POST":
-        range_x = request.form.to_dict()["x-achse"]
+        range_x = request.form.to_dict()["x-axis"]
         div = draw_graph(range_x)
 
         # different titles according to chosen data
         if range_x == "bewertung":
-            diagram_title = "Bewertungen"
+            diagram_title = "Alle Bewertungen:"
         elif range_x == "author":
-            diagram_title = "Authoren"
+            diagram_title = "Alle Authoren:"
         else:
-            diagram_title = "Genres"
+            diagram_title = "Alle Genres:"
 
         return render_template("analyse.html", barchart=div, diagram_title=diagram_title)
+
 
 if __name__ == "__main__":
     app.run(debug=True)  # ensures not to rerun the server every time a change has been made
