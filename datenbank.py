@@ -1,6 +1,6 @@
 import json
-from turtledemo.chaos import plot
 import plotly.express as px
+from plotly.offline import plot
 
 
 # read json file
@@ -14,7 +14,6 @@ def save(data):  # save new data
     file = open("data/buecher.json")
     entries = read()
     # dict structure for entries
-    # id erstellen um Einträge wiederzufinden für löschen und bearbeiten. Einzigartig für jeden Eintrag
     id_entry = entries[-1]["id"]
     entry = {
         "id": id_entry + 1,
@@ -86,7 +85,7 @@ def delete_entry(entry_id):  # update json
     for entry in entries:
         if entry["id"] != entry_id:  # ! -> if entry is not to be deleted, will be added to list
             entries_01.append(entry)
-    entries_json = json.dump(entries_01, indent=4)
+    entries_json = json.dumps(entries_01, indent=4)
     file = open("data/buecher.json", "w")
     file.write(entries_json)
     file.close()
@@ -128,7 +127,8 @@ def draw_graph(range_x):
         y = authors.values()
 
 #  draw graph using plotly
-    fig = px.bar(x=x, y=y)
+    fig = px.bar(x=x, y=y,
+                 color_discrete_sequence =['#007bff'])  # bars are in the same primary color as everything else
     div = plot(fig, output_type="div")
     return div
 
