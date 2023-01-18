@@ -4,7 +4,7 @@ Aktuell erfasse ich meine gelesenen Bücher handschriftlich. Welches recht mühs
 ## 2. Projektidee
 Mithilfe der Webapplikation, möchte ich eine gute Übersicht von meinen Büchern erschaffen. Ich möchte bereits gelesene Bücher erfassen und die Bücher filtern können. Ebenfalls möchte ich Statistiken über die gelesenen Büchern kreieren. 
 ## 3. Workflow
-![Workflow](static/img/Workflow.jpg)
+![Workflow](bücherverwaltung/static/images/Workflow.jpg)
 ## 4. Programmübersicht
 ### 4.1 Erfassen
 Hier kann der User ein neues Buch erfassen.
