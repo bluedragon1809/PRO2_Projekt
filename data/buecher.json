@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "title": "Inferno",
+        "author": "Dan Brown",
+        "genre": "Thriller",
+        "bewertung": "5"
+    },
+    {
+        "id": 5,
+        "title": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "genre": "Dystopian",
+        "bewertung": 4
+    },
+    {
+        "id": 6,
+        "title": "A Game of Thrones ",
+        "author": "George R. R. Martin",
+        "genre": "Fantasy",
+        "bewertung": "5"
+    },
+    {
+        "id": 8,
+        "title": "Nightflyers",
+        "author": "George R. R. Martin",
+        "genre": "Sci-Fi",
+        "bewertung": "3"
+    },
+    {
+        "id": 9,
+        "title": "The Maze Runner",
+        "author": "James Dashner",
+        "genre": "Dystopian",
+        "bewertung": "5"
+    },
+    {
+        "id": 11,
+        "title": "Der Heimweg",
+        "author": "Sebastian Fitzek",
+        "genre": "Thriller",
+        "bewertung": "5"
+    },
+    {
+        "id": 12,
+        "title": "The Martian",
+        "author": "Andy Weir",
+        "genre": "Sci-Fi",
+        "bewertung": "4"
+    },
+    {
+        "id": 13,
+        "title": "Iron Widow",
+        "author": "Xiran Jay Zhao",
+        "genre": "Sci-Fi",
+        "bewertung": "5"
+    },
+    {
+        "id": 14,
+        "title": "The Girl on the Train",
+        "author": "Paula Hawkins",
+        "genre": "Thriller",
+        "bewertung": "4"
+    },
+    {
+        "id": 15,
+        "title": "Divergent",
+        "author": "Veronica Roth",
+        "genre": "Dystopian",
+        "bewertung": "4"
+    },
+    {
+        "id": 16,
+        "title": "Cinder",
+        "author": "Marissa Meyer",
+        "genre": "Fantasy",
+        "bewertung": "5"
+    },
+    {
+        "id": 17,
+        "title": "City of Bones ",
+        "author": "Cassandra Clare",
+        "genre": "Fantasy",
+        "bewertung": "5"
+    }
+]

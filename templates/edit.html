@@ -8,7 +8,7 @@
 {% extends "base.html" %} <!-- uses same template as homepage -->
 {% block title %}Home Page{% endblock %}
 {% block content %}
-<div class="content-main">
+
     <h2>Bearbeiten</h2>
 
     <div class="container-fluid">
@@ -25,23 +25,24 @@
                        name="author" required>
             </div>
             <div class="row">
-                <div class="col-4">
-                    <div class="form-group">
+                <div class="col">
+                    <div class="form-group w-50">
                         <label for="genre">Genre</label>
                         <input type="text" class="form-control" value="{{entry.genre}}" id="genre"
                                name="genre" required>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="form-group">
+                <div class="w-100"></div>
+                <div class="col">
+                    <div class="form-group w-50">
                         <label for="bewertung">Bewertung</label>
                         <input type="number" min="1" max="5" class="form-control"
                                value="{{entry.bewertung}}" id="bewertung" name="bewertung" required>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <button type="submit" class="btn-form btn btn-lg btn-primary">Speichern</button>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Speichern</button>
             </div>
         </form>
 

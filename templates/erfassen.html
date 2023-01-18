@@ -13,7 +13,7 @@
 <br/><br/>
 
 <!-- form code copied from bootstrap -->
-    <form action="/danke" method="POST">
+    <form method="POST">  <!-- this sends the filled out form to json -->
 
       <div class="form-group">  <!-- first row -->
         <label for="title">Titel</label>
@@ -39,10 +39,12 @@
           <label for="bewertung">Bewertung</label>
           <input type="number" min="1" max="5" class="form-control" id="bewertung" name="bewertung" required>
         </div>
+      <div class="text-center">
         <button type="submit" class="btn btn-primary">Buch Erfassen</button> <!-- submit button -->
+      </div>
       <br/><br/>
-    </form>
 
+    </form>
 </body>
 </html>
 {% endblock %}
