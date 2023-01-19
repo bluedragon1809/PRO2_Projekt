@@ -14,17 +14,17 @@ def save(data):  # save new data
     file = open("data/buecher.json")
     entries = read()
     # dict structure for entries
-    id_entry = entries[-1]["id"]
+    id_entry = entries[-1]["id"]  # every book has its own ID, useful for deleting and editing
     entry = {
-        "id": id_entry + 1,
+        "id": id_entry + 1,  # every book has its own ID, useful for deleting and editing
         "title": data["title"],
         "author": data["author"],
         "genre": data["genre"],
         "bewertung": data["bewertung"],
     }
     entries.append(entry)  # new entry at the end of the dict
-    entries_json = json.dumps(entries, indent=4)
-    file = open("data/buecher.json", "w")
+    entries_json = json.dumps(entries, indent=4)  # 4 is the default python spacing
+    file = open("data/buecher.json", "w")  # w = write
     file.write(entries_json)
     file.close()
     return
@@ -42,14 +42,14 @@ def entries_sorted(traits):  # filters entries
             traits["bewertung"] == "" or entry["bewertung"] == traits["bewertung"]
         )
         if all(search):
-            entries_filtered.append(entry)
+            entries_filtered.append(entry)  # will be added at the end of the list
     return entries_filtered
 
 
 def read_selected(entry_id):
     # used for editing and deleting selected entry
     for entry in read():
-        if entry["id"] == entry_id:
+        if entry["id"] == entry_id:  # important for editing and deleting
             return entry
     return
 
@@ -96,6 +96,7 @@ def delete_entry(entry_id):  # update json
 def draw_graph(range_x):
     entries = read()
     bewertungen = {}
+    # every entry will be checked for bewertung, genre & authors
     for entry in entries:
         if entry["bewertung"] not in bewertungen:
             bewertungen[entry["bewertung"]] = 1
@@ -116,6 +117,7 @@ def draw_graph(range_x):
         else:
             authors[entry["author"]] += 1
 
+# uses the chosen data for the graph
     if range_x == "bewertung":
         x = bewertungen.keys()  # x = keys
         y = bewertungen.values()  # y = values

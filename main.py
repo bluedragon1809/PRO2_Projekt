@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect
-# import from datenbank.py
 from datenbank import read, save, entries_sorted, read_selected, entry_corrected, \
     delete_entry, draw_graph
 
